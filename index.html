@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Viora Smile | Tiras Blanqueadoras 7D</title>
+  <style>
+    body {font-family: Arial, sans-serif; margin:0; padding:0; background:#fafafa; color:#222;}
+    .container {max-width: 1100px; margin:auto; padding:20px;}
+    .hero {display:flex; flex-wrap:wrap; gap:30px; align-items:center;}
+    .hero img {width:100%; max-width:500px; border-radius:10px;}
+    .info {flex:1;}
+    h1 {font-size:28px; margin-bottom:10px;}
+    .price {font-size:32px; color:#7a2cff; font-weight:bold; margin:15px 0;}
+    .old-price {text-decoration:line-through; color:#999; margin-left:10px; font-size:18px;}
+    .btn {display:block; width:100%; background:#7a2cff; color:#fff; padding:18px; border:none; border-radius:5px; font-size:20px; cursor:pointer; text-align:center;}
+    .btn:hover {background:#651ed1;}
+    .countdown {font-size:14px; color:#d10000; margin-top:10px;}
+    .stock {font-size:14px; color:#d10000; margin-top:5px;}
+    .section {margin-top:50px;}
+    .section h2 {font-size:24px; margin-bottom:15px;}
+    .benefits {display:grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap:20px;}
+    .card {background:#fff; padding:20px; border-radius:10px; box-shadow:0 2px 10px rgba(0,0,0,0.05);} 
+    .reviews {background:#fff; padding:20px; border-radius:10px; margin-top:20px;}
+    .review {display:flex; gap:15px; align-items:flex-start; border-bottom:1px solid #eee; padding:10px 0;}
+    .review img {width:50px; height:50px; border-radius:50%; object-fit:cover;}
+    .before-after img {width:100%; max-width:600px; border-radius:10px; display:block; margin:auto;}
+    .guarantee {background:#eaffea; padding:15px; border-radius:10px; margin-top:20px;}
+    footer {text-align:center; padding:20px; font-size:14px; color:#777;}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="hero">
+      <img src="https://i.postimg.cc/VvqmqT7K/Screenshot-2026-03-19-19-34-16-214-com-alibaba-aliexpresshd-edit.jpg" alt="Blanqueamiento dental">
+      <div class="info">
+        <h1>Tiras Blanqueadoras Viora Smile 7D</h1>
+        <p>Blanquea tus dientes visiblemente en solo 3 días desde casa.</p>
+        <div class="price">29,90 € <span class="old-price">59,90 €</span></div>
+        <button class="btn">Comprar ahora</button>
+        <div class="countdown" id="countdown"></div>
+        <div class="stock" id="stock"></div>
+        <p style="margin-top:10px; font-size:14px;">✔ Envío desde almacenes europeos<br>✔ Pago 100% seguro<br>✔ Garantía de devolución 14 días</p>
+      </div>
+    </div>
+
+    <div class="section before-after">
+      <h2>Resultados reales</h2>
+      <img src="https://i.postimg.cc/vm0h0L2V/IMG-20260319-200225.jpg" alt="Antes y después">
+    </div>
+
+    <div class="section">
+      <h2>¿Por qué funciona?</h2>
+      <div class="benefits">
+        <div class="card">🦷 Neutraliza el tono amarillo al instante</div>
+        <div class="card">💎 Fórmula sin sensibilidad</div>
+        <div class="card">⏱ Solo 30 minutos al día</div>
+        <div class="card">✨ Efecto profesional sin clínicas</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Cómo usarlo</h2>
+      <p>Aplica las tiras sobre los dientes durante 30 minutos al día. Repite durante 3 días para obtener resultados visibles.</p>
+    </div>
+
+    <div class="section">
+      <h2>Opiniones verificadas</h2>
+      <div class="reviews">
+        <div class="review">
+          <img src="https://i.pravatar.cc/100?img=32">
+          <div><strong>Laura M.</strong><br>"En serio funciona. Mis dientes están mucho más blancos."</div>
+        </div>
+        <div class="review">
+          <img src="https://i.pravatar.cc/100?img=12">
+          <div><strong>Carlos R.</strong><br>"Resultados rápidos y sin dolor. Muy recomendable."</div>
+        </div>
+        <div class="review">
+          <img src="https://i.pravatar.cc/100?img=5">
+          <div><strong>Ana G.</strong><br>"Me sorprendió. Mejor que otros productos caros."</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section guarantee">
+      <strong>Garantía 100% sin riesgo:</strong> Si no ves resultados, te devolvemos el dinero sin preguntas.
+    </div>
+
+    <div class="section" style="text-align:center;">
+      <h2>Consigue tu sonrisa blanca hoy</h2>
+      <button class="btn">Comprar ahora</button>
+    </div>
+  </div>
+
+  <footer>
+    © 2026 Viora Smile. Todos los derechos reservados.
+  </footer>
+
+  <script>
+    var endTime = new Date().getTime() + (2 * 60 * 60 * 1000);
+    var stock = Math.floor(Math.random() * 6) + 3; // entre 3 y 8
+
+    document.getElementById("stock").innerHTML = "⚠️ Solo quedan " + stock + " unidades disponibles";
+
+    var x = setInterval(function() {
+      var now = new Date().getTime();
+      var distance = endTime - now;
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      document.getElementById("countdown").innerHTML = "⏳ Oferta termina en: " + hours + "h " + minutes + "m " + seconds + "s";
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("countdown").innerHTML = "Oferta finalizada";
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
